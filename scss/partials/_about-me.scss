@@ -1,0 +1,46 @@
+/* === ABOUT ME === */
+
+.about-me {
+    @include container;
+    @include clearfix;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+.about-img {
+    @media (min-width: 42em) {
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+.about-title {
+    margin-bottom: .25em;
+}
+
+.about-subtitle {
+    margin: .5em 0;
+}
+
+@supports (display: grid) {
+    .about-me {
+        display: grid;
+        grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+    }
+
+    .about-img {
+        grid-column: port-start / img-end;
+        grid-row: 1 / 2;
+    }
+
+    .about-title {
+        grid-column: name / port;
+        grid-row: 1 / 2;
+        align-self: end;
+    }
+
+    .about-subtitle,
+    .about-text {
+        grid-column: port / port;
+    }
+}

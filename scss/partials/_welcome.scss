@@ -1,0 +1,41 @@
+/* === WELCOME === */
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../img/header-bg.png');
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        line-height: 2;
+        text-align: center;
+        color: $dark-blue;
+
+        span {
+            display: block;
+            @include sans-serif($fs: 5.5rem, $color: $accent);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 1px;
+            background: $dark-blue;
+        }
+
+        &::before {
+            margin: 0 auto 2em;
+        }
+
+        &::after {
+            margin: 3em auto 0;
+        }
+    }
+}

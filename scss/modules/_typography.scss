@@ -1,0 +1,22 @@
+// Typography
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,900|Six+Caps&subset=latin-ext');
+
+// stacks
+$ff-s: 'Merriweather', serif;
+$ff-ss: 'Six Caps', sans-serif;
+
+// weights
+$fw-normal: 400;
+$fw-bold: 900;
+
+// mixins
+@mixin sans-serif($fs, $ls: 0.15em, $color: $dark-grey, $tt: uppercase, $lh: 1) {
+    font-family: $ff-ss;
+    font-size: $fs;
+    font-weight: $fw-normal;
+    letter-spacing: $ls;
+    line-height: $lh;
+    text-transform: $tt;
+    color: $color;
+}

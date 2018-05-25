@@ -1,0 +1,41 @@
+/* === INTRO === */
+
+.intro {
+    display: flex;
+    color: rgba($white, .7);
+
+    h2 {
+        color: $white;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 20%;
+            height: 1px;
+            margin: 1em auto 0;
+            background: rgba($white, .5);
+        }
+    }
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: minmax(4em, 1fr) minmax(auto, 30em) minmax(4em, 1fr);
+    }
+
+    &-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2.5em 5vw;
+        text-align: center;
+        background: $dark-blue;
+    }
+
+    &-left img,
+    &-right img {
+        display: block;
+        object-fit: cover;
+        min-height: 100%;
+        min-width: 100%;
+    }
+}

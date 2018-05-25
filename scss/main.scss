@@ -1,10 +1,13 @@
 // Fonts
 
 // 1. Config files and helpers
+@import 'modules/index';
 
 // 2. Vendor
+@import 'vendor/index';
 
-// 3. Base
+// 3. Partials
+@import 'partials/index';
 
 // 4. Layout
 

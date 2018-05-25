@@ -1,0 +1,40 @@
+/* === BASE === */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $ff-s;
+    font-size: .875rem;
+    font-weight: $fw-normal;
+    line-height: 1.5;
+    color: $grey;
+    background: $white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 3.125rem;
+    line-height: 1;
+    color: $accent;
+}
+
+h2 {
+    @include sans-serif($fs: 2rem);
+}
