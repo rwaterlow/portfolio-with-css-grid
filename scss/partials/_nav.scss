@@ -1,0 +1,54 @@
+.menu-btn {
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    background-color: transparent;
+    border: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 10%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    ul {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        background: $accent;
+    }
+
+    li {
+        text-align: center;
+        border-bottom: 1px solid $dark-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        &:focus,
+        &:hover {
+            background: rgba($dark-blue, .5);
+        }
+    }
+
+    a {
+        display: inline-block;
+        width: 100%;
+        padding: calc(100vh/8) 3em;
+        @include sans-serif($fs: 4rem, $color: $dark-blue);
+        line-height: 0;
+        text-decoration: none;
+    }
+}
