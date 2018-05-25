@@ -320,6 +320,9 @@ body {
   line-height: 1.5;
   color: #a7a7a7;
   background: #fff; }
+  @media (min-width: 50em) {
+    body {
+      font-size: 1.125rem; } }
 
 img {
   max-width: 100%;
@@ -333,6 +336,9 @@ h1 {
   font-size: 3.125rem;
   line-height: 1;
   color: #03afc2; }
+  @media (min-width: 50em) {
+    h1 {
+      font-size: 4.25rem; } }
 
 h2 {
   font-family: "Six Caps", sans-serif;
@@ -342,6 +348,9 @@ h2 {
   line-height: 1;
   text-transform: uppercase;
   color: #606060; }
+  @media (min-width: 50em) {
+    h2 {
+      font-size: 3rem; } }
 
 /* === WELCOME === */
 .welcome {
@@ -364,6 +373,9 @@ h2 {
     line-height: 2;
     text-align: center;
     color: #223843; }
+    @media (min-width: 50em) {
+      .welcome h1 {
+        font-size: 3vw; } }
     .welcome h1 span {
       display: block;
       font-family: "Six Caps", sans-serif;
@@ -373,6 +385,9 @@ h2 {
       line-height: 1;
       text-transform: uppercase;
       color: #03afc2; }
+      @media (min-width: 50em) {
+        .welcome h1 span {
+          font-size: 7vw; } }
     .welcome h1::before, .welcome h1::after {
       content: '';
       display: block;
@@ -451,18 +466,30 @@ h2 {
 @supports (display: grid) {
   .about-me {
     display: grid;
-    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+    grid-template-columns: [port-start] minmax(6em, 1fr) [title-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+    grid-column-gap: .5em; }
   .about-img {
-    grid-column: port-start / img-end;
+    grid-column: port / img;
     grid-row: 1 / 2; }
+    @media (min-width: 50em) {
+      .about-img {
+        grid-row: 1 / 4; } }
   .about-title {
-    grid-column: name / port;
+    grid-column: title / port;
     grid-row: 1 / 2;
     -ms-flex-item-align: end;
     align-self: end; }
   .about-subtitle,
   .about-text {
-    grid-column: port / port; } }
+    grid-column: port / port; }
+    @media (min-width: 50em) {
+      .about-subtitle,
+      .about-text {
+        grid-column: img-end / port-end; } }
+  .about-subtitle {
+    grid-row: 2 / 3; }
+  .about-text {
+    grid-row: 3 / 4; } }
 
 /* === PORTFOLIO === */
 .portfolio {
@@ -535,6 +562,9 @@ h2 {
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 50em) {
+      .portfolio-items {
+        grid-template-columns: repeat(4, 1fr); } }
   .portfolio-item.featured {
     grid-column: 1 /span 2;
     grid-row: 1 / span 2; }
@@ -562,6 +592,22 @@ form {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+  @supports (display: grid) {
+    @media (min-width: 50em) {
+      form {
+        display: grid;
+        grid-column-gap: 1em;
+        grid-template-areas: "name email" "message message" " . btn"; }
+        form .name {
+          grid-area: name; }
+        form .email {
+          grid-area: email; }
+        form .message {
+          grid-area: message; }
+          form .message textarea {
+            height: 10rem; }
+        form .btn {
+          grid-area: btn; } } }
 
 label {
   margin-top: 1em;
@@ -571,6 +617,7 @@ input,
 textarea {
   display: block;
   width: 100%;
+  min-width: 15em;
   padding: .75em;
   font-size: 1.2rem;
   background: #fbfbfc;
@@ -579,6 +626,7 @@ textarea {
 .btn {
   display: inline-block;
   width: auto;
+  min-width: auto;
   margin-top: 1em;
   margin-left: auto;
   padding: .5em 1.5em;

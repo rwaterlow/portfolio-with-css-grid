@@ -17,6 +17,10 @@ body {
     line-height: 1.5;
     color: $grey;
     background: $white;
+
+    @include mq {
+        font-size: 1.125rem;
+    }
 }
 
 img {
@@ -33,8 +37,16 @@ h1 {
     font-size: 3.125rem;
     line-height: 1;
     color: $accent;
+
+    @include mq {
+        font-size: 4.25rem;
+    }
 }
 
 h2 {
     @include sans-serif($fs: 2rem);
+
+    @include mq {
+        font-size: 3rem;
+    }
 }
